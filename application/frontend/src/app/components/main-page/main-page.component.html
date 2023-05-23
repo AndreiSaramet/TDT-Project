@@ -10,7 +10,7 @@
       {{bio}}
     </div>
   </div>
-  
+
   <mat-divider></mat-divider>
 
   <!-- main content of the profile page -->
@@ -18,17 +18,17 @@
     <mat-drawer-container autosize>
 
       <!-- list of friends: a mat-list in a mat-drawer, with items separated by mat-dividers -->
-      <mat-drawer  #drawer mode="side">      
-        
+      <mat-drawer  #drawer mode="side">
+
           <mat-list *ngIf="hasFriends()">
             <mat-list-item class="padded-list-item" *ngFor="let friend of friends; index as currentIndex; last as theLast" [@fadeIn]="fadeIn" matTooltip="{{friend.username}}" (click)="goToFriend(friend.id)">
-      
+
               <mat-card>
                 <img mat-card-avatar class="product-poster-image"  [src]="friendsImages[currentIndex]">
               </mat-card>
-  
+
               <mat-divider [inset]="true" *ngIf="!theLast"></mat-divider>
-  
+
             </mat-list-item>
           </mat-list> <!-- this should only appear if the user has friends -->
 
@@ -43,7 +43,7 @@
           <button *ngIf="hasFriends()" matTooltip="Friends" mat-button (click)="drawer.toggle()">
             <mat-icon class="icon-display">supervisor_account</mat-icon>
           </button>
-    
+
           <button *ngIf="!hasFriends()" mat-button matTooltip="No friends">
             <mat-icon class="icon-display">supervisor_account</mat-icon>
           </button>
@@ -55,7 +55,7 @@
 
           <div class ="products-manager">
             <!-- button for adding new products -->
-            <button matTooltip="New Product" class="new-button" mat-raised-button (click)="goToAdd()">
+            <button id="add-button" matTooltip="New Product" class="new-button" mat-raised-button (click)="goToAdd()">
               <mat-icon class="icon-display">exposure_plus_1</mat-icon>
             </button>
 
@@ -72,10 +72,10 @@
               </div>
             </div>
           </div> <!-- products-manager ends here -->
-  
-        </div> <!-- class container-content -->  
+
+        </div> <!-- class container-content -->
       </mat-drawer-content>
     </mat-drawer-container>
   </div>
-  
+
 </div>

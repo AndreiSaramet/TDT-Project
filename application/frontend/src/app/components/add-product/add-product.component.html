@@ -4,7 +4,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input type="email" matInput [formControl]="nameFormControl" placeholder="Toy">
+      <input id="name-input" type="email" matInput [formControl]="nameFormControl" placeholder="Toy">
       <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">
         Please enter a valid name
       </mat-error>
@@ -18,7 +18,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
-      <input matInput [formControl]="descriptionFormControl">
+      <input id="description-input" matInput [formControl]="descriptionFormControl">
       <mat-error *ngIf="descriptionFormControl.hasError('required')">
         Description is <strong>required</strong>
       </mat-error>
@@ -29,7 +29,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Price</mat-label>
-      <input type="number" matInput [formControl]="priceFormControl">
+      <input id="price-input" type="number" matInput [formControl]="priceFormControl">
       <mat-error *ngIf="priceFormControl.hasError('required')">
         Price is <strong>required</strong>
       </mat-error>
@@ -41,6 +41,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Category</mat-label>
       <textarea matInput
+                id="category-input"
                 [formControl]="categoryFormControl"
                 cdkTextareaAutosize
                 #autosize="cdkTextareaAutosize"
@@ -52,12 +53,14 @@
     </mat-form-field>
 
     <div>
-      <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose File</button>
-      <input hidden #fileInput type="file" accept="image/jpg,image/jpeg,image/gif,image/png"
+      <button id="add-picture-button" type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose
+        File
+      </button>
+      <input id="picture-input" hidden #fileInput type="file" accept="image/jpg,image/jpeg,image/gif,image/png"
              (change)="changedPicture($event)">
     </div>
 
-    <button (click)="addProduct()" mat-stroked-button class="add">Add product</button>
+    <button id="add-product-button" (click)="addProduct()" mat-stroked-button class="add">Add product</button>
   </form>
   <app-common-footer></app-common-footer>
 </div>
