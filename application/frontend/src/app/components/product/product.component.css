@@ -1,0 +1,33 @@
+.product {
+    flex: 25%;
+    background-color: #1398fe;
+    padding: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid black;
+    justify-content: center;
+}
+
+.product:hover {
+    background-color: aliceblue;
+}
+
+.product h1 {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-image{
+    flex: 100%;
+    padding: 50px 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<app-add-review (review_added)="onReviewAdded($event)"></app-add-review>
+<div *ngFor="let p of product_reviews">
+  <app-product-review [product_review]="p"></app-product-review>
+</div>
+
+<div *ngIf="!product_reviews.length">
+  No reviews for this product
+</div>

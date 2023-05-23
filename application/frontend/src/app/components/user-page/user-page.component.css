@@ -1,0 +1,48 @@
+.user-prompt {
+  background: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.description, .friend-options {
+  color: black;
+  box-sizing: border-box;
+  padding: 50px;
+  flex: 50%;
+  font-size: large;
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.friend-options {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-remove, .accept {
+  flex: 50%;
+  background-color: white;
+}
+
+.auctions {
+  background: white;
+  padding: 50px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

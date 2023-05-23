@@ -1,0 +1,25 @@
+<div class="workplace-div">
+    <div *ngIf="productsToDisplay.length > 0">
+        <div class="paginator-holder">
+            <mat-paginator [length]="products.length"
+                [pageSize]="perPage"
+                class="holder-inside"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                (page)="onChangePage($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+    
+        <div [@listAnimation]="page">
+            <div class="card-list" *ngFor="let product of productsToDisplay">
+                <app-product-component [product]="product"></app-product-component>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="productsToDisplay.length === 0" class="no-response-div">
+        <img src="../../../assets/Kendrick_Lamar_-_Damn.png" width="300px"/>
+        <p>We couldn't find any product</p>
+    </div>
+
+</div>

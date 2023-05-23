@@ -1,0 +1,13 @@
+.footer {
+  color: rgb(212, 212, 212);
+
+  width: 100vw;
+  height: 25vh;
+  background-color: rgb(68, 67, 67);
+  border-top: 3px;
+  border-color: rgb(203, 50, 50);
+
+  box-sizing: border-box;
+  margin-top: 30px;
+  padding: 50px;
+}

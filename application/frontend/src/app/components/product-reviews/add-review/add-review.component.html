@@ -1,0 +1,20 @@
+<mat-card class="product-review">
+  <mat-card-header>
+    <mat-card-title>Add a review</mat-card-title>
+  </mat-card-header>
+
+  <form class="example-form">
+    <mat-star-rating [static]="false" [rating]="rating" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
+
+    <mat-form-field class="review-text-input">
+      <mat-label>Leave a review</mat-label>
+      <mat-error *ngIf="review_text.length < 6">Text should be longer than 6 characters</mat-error>
+      <mat-error *ngIf="review_text.length > 1000">Text should be no longer than 1000 characters</mat-error>
+      <textarea matInput placeholder="" name="review_text" [(ngModel)]="review_text" [minlength]="6" [maxlength]="1000"></textarea>
+    </mat-form-field>
+
+    <button mat-button (click)="onReviewSubmit()">Submit</button>
+
+  </form>
+
+</mat-card>

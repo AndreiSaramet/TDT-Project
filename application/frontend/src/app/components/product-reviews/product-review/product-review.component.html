@@ -1,0 +1,16 @@
+<mat-card class="product-review" *ngIf="product_review && reviewer">
+  <mat-card-header>
+    <mat-card-title>{{reviewer.username}}</mat-card-title>
+    <mat-card-subtitle>{{reviewer.email}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      {{product_review.text}}
+    </p>
+    <h6>
+      {{product_review.postDate}}
+    </h6>
+  </mat-card-content>
+  <mat-star-rating [static]="true" [rating]="product_review.rating"></mat-star-rating>
+</mat-card>

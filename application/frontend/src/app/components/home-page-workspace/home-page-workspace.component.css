@@ -1,0 +1,34 @@
+.card-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paginator-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.holder-inside {
+    background-color: aliceblue;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.workplace-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(30,5,64);
+    background: white;
+    align-items: center;
+}
+
+.no-response-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+<div class="friend-request-card-container"  *ngIf="friendsImages.length === 0">
+    <div class="friend-request-card">
+        No friend requests
+    </div>
+</div>
+
+<div class="friend-request-card-container" *ngFor="let friendImage of friendsImages; index as currentIndex;">
+    <div class="friend-request-card" (click)="goToProfile(friends[currentIndex].id)">
+        <img [src]="friendImage" class="profile-image">
+        <div class="username">{{friends[currentIndex].username}}</div>
+    </div>
+</div>
+  

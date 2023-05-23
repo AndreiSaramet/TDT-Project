@@ -1,0 +1,28 @@
+#login-page {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f8ff;
+    height: 100%;
+}
+
+#login-form {
+    padding: 30px 50px;
+    margin-top: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+}
+
+#login-buttons > button {
+    margin: 5px;
+}
+
+#login-form > * {
+    margin-bottom: 15px;
+}

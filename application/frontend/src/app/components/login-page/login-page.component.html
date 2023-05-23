@@ -1,0 +1,27 @@
+<div id="login-page">
+  <form id="login-form">
+    <h1>Login</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl">
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [formControl]="passwordFormControl">
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div id="login-buttons">
+      <button (click)="login()" mat-stroked-button color="primary">Login</button>
+      <a mat-stroked-button color="primary" routerLink="/register">Register</a>
+    </div>
+  </form>
+</div>
+<app-common-footer></app-common-footer>
+

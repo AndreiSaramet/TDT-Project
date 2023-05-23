@@ -1,0 +1,34 @@
+.main-layout {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#menu-layout {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+}
+
+.footer {
+    color: rgb(212, 212, 212);
+
+    height: 25vh;
+    background-color: white;
+    border-top: 3px;
+    border-color: rgb(203, 50, 50);
+
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 50px;
+}

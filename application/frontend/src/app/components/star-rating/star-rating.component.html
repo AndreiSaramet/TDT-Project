@@ -1,0 +1,15 @@
+<div *ngIf="!static">
+  <button mat-icon-button [color]="" *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i" (click)="onClick(i+1)">
+    <mat-icon>
+      {{showIcon(i)}}
+    </mat-icon>
+  </button>
+</div>
+
+<div *ngIf="static">
+  <mat-icon [color]="" *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i">
+    <mat-icon>
+      {{showIcon(i)}}
+    </mat-icon>
+  </mat-icon>
+</div>

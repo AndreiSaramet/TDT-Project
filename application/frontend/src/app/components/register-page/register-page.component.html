@@ -1,0 +1,63 @@
+<div id="register-page">
+    <form id="register-form">
+        <h1>Register</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [formControl]="usernameFormControl">
+            <mat-error *ngIf="usernameFormControl.hasError('required')">
+                Username is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('minlength')">
+                Please enter a longer username <strong>(min 6 characters)</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+                Please enter a longer password <strong>(min 6 characters)</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Bio</mat-label>
+            <textarea matInput
+                      [formControl]="bioFormControl"
+                      cdkTextareaAutosize
+                      #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                      cdkAutosizeMaxRows="5"></textarea>
+            <mat-error *ngIf="bioFormControl.hasError('required')">
+                Bio is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="bioFormControl.hasError('minlength')">
+                Please enter a longer bio <strong>(min 2 characters)</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <div>
+            <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose File*</button>
+            <input hidden #fileInput type="file" accept="image/jpg,image/jpeg,image/gif,image/png"
+            (change)="changedPicture($event)">
+        </div>
+
+        <button (click)="register()" mat-stroked-button color="primary">Register</button>
+    </form>
+    <app-common-footer></app-common-footer>
+</div>

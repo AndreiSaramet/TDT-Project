@@ -1,0 +1,81 @@
+<div class="mainPage">
+  <div class="line"></div>
+  <div class="bio">
+    <img [src]="this.image" class="changer" (click)="goToChangeProfile()"/>
+    <div class="bioText">
+      <div class="name">
+        {{currentUser.username}}
+        <mat-icon class="changer" (click)="goToChangeUsername()"> border_color</mat-icon>
+      </div>
+      {{bio}}
+    </div>
+  </div>
+  
+  <mat-divider></mat-divider>
+
+  <!-- main content of the profile page -->
+  <div class="container">
+    <mat-drawer-container autosize>
+
+      <!-- list of friends: a mat-list in a mat-drawer, with items separated by mat-dividers -->
+      <mat-drawer  #drawer mode="side">      
+        
+          <mat-list *ngIf="hasFriends()">
+            <mat-list-item class="padded-list-item" *ngFor="let friend of friends; index as currentIndex; last as theLast" [@fadeIn]="fadeIn" matTooltip="{{friend.username}}" (click)="goToFriend(friend.id)">
+      
+              <mat-card>
+                <img mat-card-avatar class="product-poster-image"  [src]="friendsImages[currentIndex]">
+              </mat-card>
+  
+              <mat-divider [inset]="true" *ngIf="!theLast"></mat-divider>
+  
+            </mat-list-item>
+          </mat-list> <!-- this should only appear if the user has friends -->
+
+          <p *ngIf="!hasFriends()">No Friends, amigo...</p> <!-- this should never be displayed -->
+
+      </mat-drawer>
+
+      <!-- actions of the user -->
+      <mat-drawer-content>
+        <div class="container-content">
+          <!-- buttons for seeing list of friends -->
+          <button *ngIf="hasFriends()" matTooltip="Friends" mat-button (click)="drawer.toggle()">
+            <mat-icon class="icon-display">supervisor_account</mat-icon>
+          </button>
+    
+          <button *ngIf="!hasFriends()" mat-button matTooltip="No friends">
+            <mat-icon class="icon-display">supervisor_account</mat-icon>
+          </button>
+          <br>
+          <br>
+          <button matTooltip="Friend requests" mat-button (click)="goToFriendRequests()">
+            	<mat-icon  class="icon-display">group_add</mat-icon>
+          </button>
+
+          <div class ="products-manager">
+            <!-- button for adding new products -->
+            <button matTooltip="New Product" class="new-button" mat-raised-button (click)="goToAdd()">
+              <mat-icon class="icon-display">exposure_plus_1</mat-icon>
+            </button>
+
+            <!-- list of products solds by current user -->
+            <div class="information" *ngIf="!hasProducts()">
+              <p>No Products, start adding some</p>
+            </div>
+
+            <div class="card-list" *ngFor="let product of products">
+              <div>
+                <app-product-component [product]="product" [@fadeIn]="fadeIn"></app-product-component>
+                <button mat-button (click)="goToEdit(product.id!)">Edit</button>
+                <button mat-button (click)="deleteProduct(product.id!)">Delete</button>
+              </div>
+            </div>
+          </div> <!-- products-manager ends here -->
+  
+        </div> <!-- class container-content -->  
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+  
+</div>

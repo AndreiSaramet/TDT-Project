@@ -1,0 +1,30 @@
+#register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    height: 100%;
+}
+
+#register-form {
+    padding: 30px 50px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+}
+
+#register-form > * {
+    margin-bottom: 15px;
+}
+
+.file-name {
+    margin-left: 5px;
+}

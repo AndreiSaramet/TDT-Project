@@ -1,0 +1,19 @@
+<div id="register-page">
+    <form id="register-form">
+        <h1>Change username</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [formControl]="usernameFormControl">
+            <mat-error *ngIf="usernameFormControl.hasError('required')">
+                Username is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('minlength')">
+                Please enter a longer username <strong>(min 6 characters)</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button (click)="changeUsername()" mat-stroked-button color="primary">Change</button>
+    </form>
+    <app-common-footer></app-common-footer>
+</div>

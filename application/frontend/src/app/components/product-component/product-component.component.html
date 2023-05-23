@@ -1,0 +1,25 @@
+<mat-card class="product-card" routerLink="/product/{{getProductId()}}">
+    <mat-card-header>
+      <div mat-card-avatar class="product-header-image">
+        <img [src]="profileImage" class="product-poster-image">
+      </div>
+      <mat-card-title>{{product?.name}} | Price: {{product?.price}} lei</mat-card-title>
+      <mat-card-subtitle>{{product?.category}}</mat-card-subtitle>
+    </mat-card-header>
+    
+    <div class="product-card-body">
+      <img class="product-image" mat-card-image [src]="this.image">
+
+      <mat-card-content class="product-card-content">
+        <div class="product-description">
+          <p>
+            {{product?.description}}
+          </p>
+          <p *ngIf="hasReviews()">
+            {{showReviewCount()}}
+          </p>
+        </div>
+      </mat-card-content>
+    </div>
+
+</mat-card>

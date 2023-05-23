@@ -1,0 +1,37 @@
+<div class="product-page">
+  <div class="product-container">
+    <mat-card class="product-card">
+      <mat-card-title>{{product.name}} | Price: {{product.price}} lei</mat-card-title>
+
+      <div class="image-container">
+        <img class="product-image" [src]="productImage">
+      </div>
+
+      <div class="columns-container">
+        <div class="left-column-container">
+          <mat-card-content class="description">
+            {{product.description}}
+          </mat-card-content>
+          <br><br>
+          <mat-card-title>Reviews</mat-card-title>
+          <br>
+          <app-product-reviews [product-reviews]="reviews" (review_added)="onReviewAdded($event)"></app-product-reviews>
+        </div>
+        <div class="right-column-container">
+          <div class="user-container">
+            <div class="reviews-container">
+              <p>{{reviews.length}} Reviews</p>
+             </div>
+            <div class="user-info-container" (click)="goToAnotherUserProfile()">
+              <img class="user-picture" [src]="posterProfileImage">
+              <p class="user-name">{{poster?.username}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <app-common-footer></app-common-footer>
+</div>
+
+

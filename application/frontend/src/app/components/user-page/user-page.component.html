@@ -1,0 +1,28 @@
+<div>
+  <div class="user-prompt">
+    <img [src]="this.image" class="profile-img" alt="Profile Picture"/>
+    <div class="description">{{userProfile?.bio}}</div>
+    <div class="friend-options">
+      <button *ngIf="!isFriend && !receivedFriendRequest && !sentFriendRequest" (click)="sendFriendRequest()"
+              class="add-remove" mat-stroked-button>Add Friend
+      </button>
+      <button *ngIf="isFriend" class="add-remove" (click)="removeFriend()" mat-stroked-button>Remove Friend
+      </button>
+      <button *ngIf="!isFriend && receivedFriendRequest" (click)="acceptFriendRequest()" class="add-remove"
+              mat-stroked-button>Accept Friend Request
+      </button>
+      <button *ngIf="!isFriend && receivedFriendRequest" (click)="denyFriendRequest()" class="add-remove"
+              mat-stroked-button>Deny Friend Request
+      </button>
+      <button *ngIf="sentFriendRequest" (click)="cancelFriendRequest()" class="add-remove" mat-stroked-button>Cancel
+        Friend Request
+      </button>
+    </div>
+  </div>
+  <div class="auctions" [@moveIn]="moveIn">
+    <div *ngFor="let product of products">
+      <app-product-component [product]="product"></app-product-component>
+    </div>
+  </div>
+  <app-common-footer></app-common-footer>
+</div>

@@ -1,0 +1,29 @@
+<div id="register-page">
+    <form id="register-form">
+        <h1>Profile info</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Bio</mat-label>
+            <textarea matInput
+                      [formControl]="bioFormControl"
+                      cdkTextareaAutosize
+                      #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                      cdkAutosizeMaxRows="5"></textarea>
+            <mat-error *ngIf="bioFormControl.hasError('required')">
+                Bio is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="bioFormControl.hasError('minlength')">
+                Please enter a longer bio <strong>(min 2 characters)</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <div>
+            <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose File*</button>
+            <input hidden #fileInput type="file" accept="image/jpg,image/jpeg,image/gif,image/png"
+            (change)="changedPicture($event)">
+        </div>
+
+        <button (click)="changeProfile()" mat-stroked-button color="primary">Change</button>
+    </form>
+    <app-common-footer></app-common-footer>
+</div>

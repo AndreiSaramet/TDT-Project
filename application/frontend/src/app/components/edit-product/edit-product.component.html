@@ -1,0 +1,63 @@
+<div id="register-page">
+  <form id="register-form">
+    <h1>Edit product</h1>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="email" matInput [formControl]="nameFormControl" placeholder="Toy">
+      <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">
+        Please enter a valid name
+      </mat-error>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="nameFormControl.hasError('minlength')">
+        Enter a longer <strong>name</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput [formControl]="descriptionFormControl">
+      <mat-error *ngIf="descriptionFormControl.hasError('required')">
+        Description is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="descriptionFormControl.hasError('minlength')">
+        Enter a longer <strong>description</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input type="number" matInput [formControl]="priceFormControl">
+      <mat-error *ngIf="priceFormControl.hasError('required')">
+        Price is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="priceFormControl.hasError('min')">
+        Price must be <strong>above 0</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <textarea matInput
+                [formControl]="categoryFormControl"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"></textarea>
+      <mat-error *ngIf="categoryFormControl.hasError('required')">
+        Category is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose File</button>
+      <input hidden #fileInput type="file" accept="image/jpg,image/jpeg,image/gif,image/png"
+             (change)="changedPicture($event)">
+    </div>
+
+    <button (click)="addProduct()" mat-stroked-button color="primary" class="add">Edit product</button>
+  </form>
+  <app-common-footer></app-common-footer>
+</div>

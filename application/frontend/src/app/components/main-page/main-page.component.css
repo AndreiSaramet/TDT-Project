@@ -1,0 +1,214 @@
+
+.pageHeader{
+    height: 150px;
+    background-color: #3c84c0;
+    font-size: 40px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.imageList{
+   justify-content: space-between;
+}
+
+.changer:hover {
+    cursor: pointer;
+}
+
+.headerTitle {
+    color: white;
+    margin-left: 100px;
+}
+
+.friend-image {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+
+.bioLine {
+    border: 1px solid black;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #54b0f6;
+    overflow: auto;
+    color: white;
+}
+
+.line{
+    background-color: #3c84c0;
+    height: 1px;
+}
+
+img {
+    width: 120px;
+    height: 95px;
+    margin: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
+.bio > img {
+    margin-left: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid  black;
+}
+
+.bio {
+    display: flex;
+    background-color: #3c84c0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: large;
+}
+
+.bioText {
+    margin-left: 100px;
+    width: 30%;
+}
+
+
+.pageBody{
+    background: rgb(40,4,87);
+    background: white;
+
+}
+
+.addButton{
+    width: 200px;
+    height: 75px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: #3c84c0;
+    color: black;
+    margin: 30px;
+}
+
+.addButton:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.shopSquare{
+    width: 35%;
+    height: 200px;
+    border: 2px solid black;
+    background-color:  aliceblue;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopSquare {
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.shopImage:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.buttonsAndTitle{
+    margin-top: 20px;
+}
+
+.shopDiv{
+    display: flex;
+    justify-content: space-around;
+}
+
+.deleteButton, .editButton{
+    background-color: #a2a8d3;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.deleteButton:hover, .editButton:hover{
+    background-color: aliceblue;
+    box-shadow: 5px 5px rgb(27, 27, 97);
+    cursor: pointer;
+}
+
+.shopImage{
+    height: 80%;
+    width: 50%;
+}
+
+.buttonDiv{
+    display: flex;
+    gap: 10px;
+}
+
+.imageTitle{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+
+
+.container {
+    padding: 25px;
+}
+
+.icon-display {
+    transform: scale(2);
+}
+
+.new-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-drawer {
+    padding: 25px;
+}
+
+.container-content {
+    padding: 25px;
+}
+
+.products-manager {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.information {
+    margin: 25px;
+}
+
+.product-poster-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.padded-list-item {
+    padding: 50px;
+    height: auto;
+}
