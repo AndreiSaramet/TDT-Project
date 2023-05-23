@@ -11,7 +11,7 @@
       </form>
     </div>
 
-    <mat-icon class="resized-icon user-icon" [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="User Icon">account_box</mat-icon>
+    <mat-icon id="account-button" class="resized-icon user-icon" [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="User Icon">account_box</mat-icon>
     <mat-menu #menu="matMenu">
       <button mat-menu-item *ngIf="isLoggedIn()" (click)="tryRouteProducts()"><mat-icon>shopping_basket</mat-icon>Products</button>
       <button mat-menu-item *ngIf="isLoggedIn()" (click)="tryRouteUserPage()"><mat-icon>account_circle</mat-icon>Profile</button>
