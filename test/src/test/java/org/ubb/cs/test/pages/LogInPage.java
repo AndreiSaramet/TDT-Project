@@ -15,4 +15,8 @@ public final class LogInPage extends PageObject {
     public void press_log_in() {
         this.find(By.id("login-button")).click();
     }
+
+    public String get_snack_bar_message() {
+        return this.find(By.className("mat-mdc-snack-bar-label")).getTextContent();
+    }
 }

@@ -10,4 +10,12 @@ public class MainPage extends PageObject {
         this.find(By.cssSelector(".user-icon")).click();
         this.find(By.cssSelector(".mat-mdc-menu-item")).click();
     }
+
+    public void log_out() {
+
+    }
+
+    public String get_snack_bar_message() {
+        return this.find(By.className("mat-mdc-snack-bar-label")).getTextContent();
+    }
 }

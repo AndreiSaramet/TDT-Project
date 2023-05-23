@@ -1,6 +1,8 @@
 package org.ubb.cs.test.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.ubb.cs.test.pages.LogInPage;
 
 public class LogInSteps {
@@ -25,5 +27,10 @@ public class LogInSteps {
     @Step
     public void log_in() {
         this.logInPage.press_log_in();
+    }
+
+    @Step
+    public void check_snackbar_message(final String message) {
+        MatcherAssert.assertThat(this.logInPage.get_snack_bar_message(), Matchers.containsString(message));
     }
 }
