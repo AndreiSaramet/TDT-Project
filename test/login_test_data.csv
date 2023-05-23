@@ -1,0 +1,7 @@
+username,password,valid
+user1@email.com,pass1,y
+,whatever,n
+whatever,,n
+user2@email.com,pass2,y
+,,n
+user,pass,n
