@@ -22,8 +22,4 @@ public class MainSteps {
     public void check_snackbar_message(final String message) {
         MatcherAssert.assertThat(this.mainPage.get_snack_bar_message(), Matchers.containsString(message));
     }
-
-    public void log_out() {
-        this.mainPage.log_out();
-    }
 }

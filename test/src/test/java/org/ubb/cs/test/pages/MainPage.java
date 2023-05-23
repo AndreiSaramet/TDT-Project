@@ -7,13 +7,8 @@ import org.openqa.selenium.By;
 @DefaultUrl("http://localhost:4200")
 public class MainPage extends PageObject {
     public void log_in() {
-        this.find(By.cssSelector(".user-icon")).click();
+        this.find(By.id("account-button")).click();
         this.find(By.id("log-in-button")).click();
-    }
-
-    public void log_out() {
-        this.find(By.cssSelector(".user-icon")).click();
-        this.find(By.id("log-out-button")).click();
     }
 
     public String get_snack_bar_message() {
