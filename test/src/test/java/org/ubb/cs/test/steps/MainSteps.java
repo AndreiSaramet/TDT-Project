@@ -24,5 +24,6 @@ public class MainSteps {
     }
 
     public void log_out() {
+        this.mainPage.log_out();
     }
 }
