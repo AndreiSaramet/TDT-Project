@@ -19,6 +19,11 @@ public class MainSteps {
     }
 
     @Step
+    public void go_to_profile() {
+        this.mainPage.go_to_profile();
+    }
+
+    @Step
     public void check_snackbar_message(final String message) {
         MatcherAssert.assertThat(this.mainPage.get_snack_bar_message(), Matchers.containsString(message));
     }
