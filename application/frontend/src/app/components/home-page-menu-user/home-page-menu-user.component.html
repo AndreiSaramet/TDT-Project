@@ -8,15 +8,15 @@
             <mat-label>Search</mat-label>
             <input matInput name="searchInput" class="search" placeholder="GPUs" value="" [(ngModel)]="searchValue" (keydown)="search($event)">
           </mat-form-field>
-      </form>  
+      </form>
     </div>
 
     <mat-icon class="resized-icon user-icon" [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="User Icon">account_box</mat-icon>
     <mat-menu #menu="matMenu">
       <button mat-menu-item *ngIf="isLoggedIn()" (click)="tryRouteProducts()"><mat-icon>shopping_basket</mat-icon>Products</button>
       <button mat-menu-item *ngIf="isLoggedIn()" (click)="tryRouteUserPage()"><mat-icon>account_circle</mat-icon>Profile</button>
-      <button mat-menu-item *ngIf="isLoggedIn()" (click)="routeLogout()"><mat-icon>exit_to_app</mat-icon>Logout</button>
-      <button mat-menu-item *ngIf="!isLoggedIn()" (click)="routeLogin()"><mat-icon>exit_to_app</mat-icon>Login</button>
+      <button id="log-out-button" mat-menu-item *ngIf="isLoggedIn()" (click)="routeLogout()"><mat-icon>exit_to_app</mat-icon>Logout</button>
+      <button id="log-in-button" mat-menu-item *ngIf="!isLoggedIn()" (click)="routeLogin()"><mat-icon>exit_to_app</mat-icon>Login</button>
     </mat-menu>
 
 </div>
