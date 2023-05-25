@@ -5,3 +5,6 @@ whatever,,n
 user2@email.com,pass2,y
 ,,n
 user,pass,n
+admin,,n
+admin,admin,n
+admin,whatever,n
