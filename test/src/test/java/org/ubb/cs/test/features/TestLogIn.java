@@ -29,7 +29,6 @@ public final class TestLogIn {
     private String valid;
 
     @Test
-    @Pending
     public void test_log_in() {
         this.mainSteps.open();
         this.mainSteps.go_to_log_in();
