@@ -52,10 +52,18 @@ public final class TestAddProduct {
         this.profileSteps.add_product();
         this.addProductSteps.enter_name(name);
         this.addProductSteps.enter_description(description);
-        this.addProductSteps.enter_price(Integer.toString(price));
+        String stringPrice = null;
+        if (price != null) {
+            stringPrice = Integer.toString(price);
+        }
+        this.addProductSteps.enter_price(stringPrice);
         this.addProductSteps.enter_category(category);
-        File file = new File(pathToPicture);
-        this.addProductSteps.enter_picture(file.getAbsolutePath());
+        String path = null;
+        if (category != null) {
+            File file = new File(pathToPicture);
+            path = file.getAbsolutePath();
+        }
+        this.addProductSteps.enter_picture(path);
         this.addProductSteps.add_product();
     }
 }
